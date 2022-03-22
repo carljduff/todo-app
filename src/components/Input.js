@@ -1,4 +1,4 @@
-import './css/input.css'
+import '../css/input.css'
 export default function Input() {
     return(
         <>
