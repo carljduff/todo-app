@@ -9,7 +9,7 @@ body {
     max-width: 800px;
     max-height: 800px;
 }
-.status-button {
+.button, .status-button {
     border-radius: 10px;
     width: auto;
     height: auto;
@@ -17,4 +17,10 @@ body {
     background-color: #94A9C2;
     color: black;
 
+}
+
+.todo-wrap {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
 }
