@@ -4,10 +4,10 @@ body {
 
 .app {
     margin: auto;
-    margin-top: 400px;
+    margin-top: 300px;
     background-color: #7EA3CC;
-    max-width: 800px;
-    max-height: 800px;
+    max-width: 600px;
+    max-height: 600px;
 }
 .button, .status-button {
     border-radius: 10px;
@@ -16,11 +16,18 @@ body {
     cursor: pointer;
     background-color: #94A9C2;
     color: black;
-
 }
 
-.todo-wrap {
+.check {
+    margin-left: 100px;
+}
+
+.button-wrapper {
+    margin-top: 20px;
     display: flex;
-    flex-flow: column wrap;
     justify-content: center;
+    padding: 20px;
 }
+
+
+
