@@ -1,7 +1,11 @@
+import './css/input.css'
 export default function Input() {
     return(
         <>
-        <h1>TEST: INPUT</h1>
+
+        <input className='input' placeholder="What do you need to do?" /> 
+
+        
         </>
     )
 }

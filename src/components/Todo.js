@@ -1,7 +1,8 @@
 export default function Todo() {
     return(
         <>
-        <h1>TEST: TODO</h1>
+       
+       <input type='checkbox' />
         </>
     )
 }
