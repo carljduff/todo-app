@@ -1,0 +1,20 @@
+body {
+    background-color: #403F4C;
+}
+
+.app {
+    margin: auto;
+    margin-top: 400px;
+    background-color: #7EA3CC;
+    max-width: 800px;
+    max-height: 800px;
+}
+.status-button {
+    border-radius: 10px;
+    width: auto;
+    height: auto;
+    cursor: pointer;
+    background-color: #94A9C2;
+    color: black;
+
+}
