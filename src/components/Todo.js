@@ -4,7 +4,7 @@ import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 
-export default function Todo() {
+export default function Todo( {label} ) {
     return(
         <>
 
@@ -12,7 +12,7 @@ export default function Todo() {
        <Container>
   <Row className='todo-wrap'>
     <Col><button className='button check'>CHECK</button></Col>
-    <Col><h4 className="todo">THIS IS A TODO</h4></Col>
+    <Col><h4 className="todo">{label}</h4></Col>
     <Col><button className='button'>X</button></Col>
   </Row>
 </Container>
