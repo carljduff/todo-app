@@ -10,20 +10,21 @@ function App() {
 
   const [todos, setTodos] = useState([]);
   const [input, setInput] = useState('');
-
+  const [status, setStatus] = useState('All')
 
 
 
 
   return (
     <div className="app">
+      <h1>To-Do List</h1>
      
-     <Input todos={todos} setTodos={setTodos} input={input} setInput={setInput} />
+     <Input todos={todos} setTodos={setTodos} input={input} setInput={setInput} setStatus={setStatus} />
      <List todos={todos} />
      <div className='button-wrapper'>
 <StatusButton label={'All'}  />
 <StatusButton label={'To-Do'} />
-<StatusButton label={'Completed'}/>
+<StatusButton label={'Complete'}/>
        
      </div>
 
