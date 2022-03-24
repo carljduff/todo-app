@@ -4,6 +4,7 @@ import StatusButton from './components/StatusButton';
 import {List} from './components/List';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import Card from 'react-bootstrap/Card'
 
 
 function App() {
@@ -17,15 +18,24 @@ function App() {
 
   return (
     <div className="app">
-      <h1>To-Do List</h1>
-     
+
+
+
+<Card className="text-center">
+  <Card.Header>To-Do List</Card.Header>
+  <Card.Body>
      <Input todos={todos} setTodos={setTodos} input={input} setInput={setInput} setStatus={setStatus} />
+    <Card.Text>
      <List todos={todos} />
+    </Card.Text>
+  </Card.Body>
+</Card>
+
+  
      <div className='button-wrapper'>
 <StatusButton label={'All'}  />
 <StatusButton label={'To-Do'} />
 <StatusButton label={'Complete'}/>
-       
      </div>
 
     </div>
