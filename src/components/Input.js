@@ -25,8 +25,7 @@ export default function Input( {todos, setTodos, input, setInput}) {
         <div className='input-wrapper'>
 
         <input value={input} onChange={inputValueHandler} onKeyDown={inputSubmitHandler} className='input' placeholder="What do you need to do?" /> 
-        {/* <button onClick={inputSubmitHandler} className='button'>Add</button> */}
-        
+    
         </div>
     )
 }

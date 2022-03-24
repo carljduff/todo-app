@@ -6,18 +6,11 @@ import Col from 'react-bootstrap/Col'
 
 export default function Todo( {label} ) {
 
-  const statusHandler = () => {
 
-
-    
-  }
-
-
+  
 
     return(
         <>
-
-       
        <Container>
   <Row className='todo-wrap'>
     <Col><button className='button check'>CHECK</button></Col>
@@ -25,11 +18,6 @@ export default function Todo( {label} ) {
     <Col><button className='button'>X</button></Col>
   </Row>
 </Container>
-
-        
-           
-        
-
         </>
     )
 }

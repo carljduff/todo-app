@@ -17,10 +17,9 @@ function App() {
 
 
   return (
-    <div className="app">
-
-
-
+   <>
+   
+   
 <Card className="text-center">
   <Card.Header>To-Do List</Card.Header>
   <Card.Body>
@@ -37,8 +36,12 @@ function App() {
 <StatusButton label={'To-Do'} />
 <StatusButton label={'Complete'}/>
      </div>
+   </>
 
-    </div>
+
+
+
+   
   );
 }
 
