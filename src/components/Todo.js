@@ -20,6 +20,10 @@ const checkHandler = () => {
   }
 }
 
+const howManyLeft = () => {
+  setTodos(todos.filter(item => item.completed == true)).length;
+}
+
     return(
         <>
        <Container>
