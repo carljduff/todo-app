@@ -13,7 +13,6 @@ import Card from 'react-bootstrap/Card'
 function App() {
 
   const [todos, setTodos] = useState([]);
-   
   const [input, setInput] = useState('');
   const [status, setStatus] = useState('All')
 
@@ -26,6 +25,10 @@ useEffect(() => {
 }, [todos]);
 
 
+ let howMany = todos.filter((todo) => todo.completed === true).length;
+
+
+
   return (
    <>
    
@@ -33,7 +36,7 @@ useEffect(() => {
 <Card className="text-center">
   <Card.Header>To-Do List</Card.Header>
   <Card.Body>
-     <Input todos={todos} setTodos={setTodos} input={input} setInput={setInput} setStatus={setStatus} />
+     <Input todos={todos} setTodos={setTodos} input={input} setInput={setInput} />
     <Card.Text>
      <List todos={todos} setTodos={setTodos} />
     </Card.Text>
@@ -42,9 +45,10 @@ useEffect(() => {
 
   
      <div className='button-wrapper'>
+       <p> {howMany} </p>
 <StatusButton label={'All'} setStatus={setStatus} status={status} />
 <StatusButton label={'To-Do'} />
-<StatusButton label={'Complete'}/>
+<StatusButton label={'Complete'} />
      </div>
    </>
 

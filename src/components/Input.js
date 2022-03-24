@@ -23,6 +23,8 @@ export default function Input ({todos, setTodos, input, setInput}) {
             setInput('')
         }
     }
+
+
     
 
     return(
