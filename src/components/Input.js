@@ -16,7 +16,10 @@ export default function Input ({todos, setTodos, input, setInput}) {
                     id: Date.now(),
                     uniqueID: Math.random() + 1
                 }
+
             ])
+            
+
             setInput('')
         }
     }

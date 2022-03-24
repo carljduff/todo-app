@@ -1,14 +1,9 @@
-export default function StatusButton(props) {
+export default function StatusButton({label}) {
     return(
 
         
         <div>
-        
-
-
-        <button className="status-button">{props.label}</button>
-
-
+        <button className="status-button">{label}</button>
         </div>
     )
 }
