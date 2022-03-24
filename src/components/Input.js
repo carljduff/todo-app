@@ -1,5 +1,5 @@
 import '../css/input.css'
-export default function Input( {todos, setTodos, input, setInput}) {
+export default function Input ({todos, setTodos, input, setInput}) {
 
     const inputValueHandler = (e) => {
         setInput(e.target.value)
@@ -13,13 +13,14 @@ export default function Input( {todos, setTodos, input, setInput}) {
                 {
                     label: input,
                     completed: false,
-                    id: Date.now()
+                    id: Date.now(),
+                    uniqueID: Math.random() + 1
                 }
             ])
-            console.log(todos)
             setInput('')
         }
     }
+    
 
     return(
         <div className='input-wrapper'>

@@ -7,7 +7,7 @@ import './App.css';
 import Card from 'react-bootstrap/Card'
 
 
-function App() {
+function App({deleteHandler}) {
 
   const [todos, setTodos] = useState([]);
   const [input, setInput] = useState('');
@@ -25,7 +25,7 @@ function App() {
   <Card.Body>
      <Input todos={todos} setTodos={setTodos} input={input} setInput={setInput} setStatus={setStatus} />
     <Card.Text>
-     <List todos={todos} />
+     <List todos={todos} setTodos={setTodos} />
     </Card.Text>
   </Card.Body>
 </Card>
