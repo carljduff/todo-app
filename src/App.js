@@ -4,30 +4,44 @@ import StatusButton from './components/StatusButton';
 import {List} from './components/List';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import Card from 'react-bootstrap/Card'
 
 
-function App() {
+function App({deleteHandler}) {
 
   const [todos, setTodos] = useState([]);
   const [input, setInput] = useState('');
-
+  const [status, setStatus] = useState('All')
 
 
 
 
   return (
-    <div className="app">
-     
-     <Input todos={todos} setTodos={setTodos} input={input} setInput={setInput} />
-     <List todos={todos} />
+   <>
+   
+   
+<Card className="text-center">
+  <Card.Header>To-Do List</Card.Header>
+  <Card.Body>
+     <Input todos={todos} setTodos={setTodos} input={input} setInput={setInput} setStatus={setStatus} />
+    <Card.Text>
+     <List todos={todos} setTodos={setTodos} />
+    </Card.Text>
+  </Card.Body>
+</Card>
+
+  
      <div className='button-wrapper'>
 <StatusButton label={'All'}  />
 <StatusButton label={'To-Do'} />
-<StatusButton label={'Completed'}/>
-       
+<StatusButton label={'Complete'}/>
      </div>
+   </>
 
-    </div>
+
+
+
+   
   );
 }
 
