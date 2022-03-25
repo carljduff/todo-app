@@ -11,6 +11,7 @@ function App() {
 
   const [todos, setTodos] = useState([]);
   const [input, setInput] = useState('');
+  const [status, setStatus] = useState('All')
   
 
   useEffect(()=>{
@@ -24,8 +25,21 @@ useEffect(() => {
 
  let howMany = todos.filter((todo) => todo.completed === false).length;
 
- 
+ let view = todos;
 
+ const statusFunction = () => {
+   if(StatusButton.label === 'Complete') {
+     setStatus('Complete')
+     console.log(status)
+     console.log('test')
+   }
+   if(status === 'Complete') {
+     view = todos.filter((todo) => todo.completed)
+     console.log('test')
+    }
+  }
+   
+ 
  
 
 
@@ -34,7 +48,7 @@ useEffect(() => {
    <>
    
    
-  <p className='card'>To-Do List</p>
+  <p className='title'>To-Do List</p>
 
   
      <Input todos={todos} setTodos={setTodos} input={input} setInput={setInput} />
@@ -47,7 +61,7 @@ useEffect(() => {
      <div className='button-wrapper'>
 <StatusButton label={'All'} />
 <StatusButton label={'To-Do'} />
-<StatusButton label={'Complete'} />
+<StatusButton todos={view} setStatus={setStatus} status={status} completeFunction={statusFunction} label={'Complete'} />
      </div>
    </>
 

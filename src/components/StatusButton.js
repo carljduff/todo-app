@@ -1,15 +1,13 @@
-export default function StatusButton({label}) {
+export default function StatusButton({label, completeFunction, setStatus }) {
 
 
     
   
     return(
 
-
-        
-        
         <div>
-        <button className="button">{label}</button>
+        <button onClick={completeFunction} className="button">{label}</button>
+        
         </div>
     )
 }
