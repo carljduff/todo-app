@@ -4,17 +4,14 @@ import StatusButton from './components/StatusButton';
 import {List} from './components/List';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import Card from 'react-bootstrap/Card'
 
-// const saved = localStorage.getItem(todos);
-// const initialValue = JSON.parse(todos);
-// return initialValue || "";
+
 
 function App() {
 
   const [todos, setTodos] = useState([]);
   const [input, setInput] = useState('');
-  const [status, setStatus] = useState('All')
+  
 
   useEffect(()=>{
     setTodos(JSON.parse(localStorage.getItem('work')))
@@ -26,6 +23,10 @@ useEffect(() => {
 
 
  let howMany = todos.filter((todo) => todo.completed === false).length;
+
+ 
+
+ 
 
 
 
@@ -44,7 +45,7 @@ useEffect(() => {
   
        <p className='count'> {` ${howMany} Items Left`} </p>
      <div className='button-wrapper'>
-<StatusButton label={'All'} setStatus={setStatus} status={status} />
+<StatusButton label={'All'} />
 <StatusButton label={'To-Do'} />
 <StatusButton label={'Complete'} />
      </div>
