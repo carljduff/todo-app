@@ -27,17 +27,22 @@ useEffect(() => {
 
  let view = todos;
 
- const statusFunction = () => {
-   if(StatusButton.label === 'Complete') {
+
+
+
+ 
+ const statusFunction = (e) => {
+   if(e.target.innerText === 'Complete') {
      setStatus('Complete')
      console.log(status)
      console.log('test')
    }
+     
    if(status === 'Complete') {
      view = todos.filter((todo) => todo.completed)
-     console.log('test')
     }
   }
+
    
  
  
@@ -48,7 +53,7 @@ useEffect(() => {
    <>
    
    
-  <p className='title'>To-Do List</p>
+  
 
   
      <Input todos={todos} setTodos={setTodos} input={input} setInput={setInput} />
