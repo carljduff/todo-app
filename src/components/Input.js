@@ -33,7 +33,7 @@ export default function Input ({todos, setTodos, input, setInput}) {
                     ...stateItem, completed: !stateItem.completed 
                 }
             }
-            return item;
+            return stateItem;
         }))
       }
 
