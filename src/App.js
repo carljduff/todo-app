@@ -13,7 +13,6 @@ import Card from 'react-bootstrap/Card'
 function App() {
 
   const [todos, setTodos] = useState([]);
-   
   const [input, setInput] = useState('');
   const [status, setStatus] = useState('All')
 
@@ -26,25 +25,28 @@ useEffect(() => {
 }, [todos]);
 
 
+ let howMany = todos.filter((todo) => todo.completed === false).length;
+
+
+
   return (
    <>
    
    
-<Card className="text-center">
-  <Card.Header>To-Do List</Card.Header>
-  <Card.Body>
-     <Input todos={todos} setTodos={setTodos} input={input} setInput={setInput} setStatus={setStatus} />
-    <Card.Text>
-     <List todos={todos} setTodos={setTodos} />
-    </Card.Text>
-  </Card.Body>
-</Card>
+  <p className='card'>To-Do List</p>
 
   
+     <Input todos={todos} setTodos={setTodos} input={input} setInput={setInput} />
+    
+     <List todos={todos} setTodos={setTodos} />
+   
+
+  
+       <p className='count'> {` ${howMany} Items Left`} </p>
      <div className='button-wrapper'>
 <StatusButton label={'All'} setStatus={setStatus} status={status} />
 <StatusButton label={'To-Do'} />
-<StatusButton label={'Complete'}/>
+<StatusButton label={'Complete'} />
      </div>
    </>
 
@@ -56,3 +58,15 @@ useEffect(() => {
 }
 
 export default App;
+
+
+
+{/* <Card className="text-center card">
+  <Card.Header className='card'>To-Do List</Card.Header>
+  <Card.Body>
+     <Input todos={todos} setTodos={setTodos} input={input} setInput={setInput} />
+    <Card.Text>
+     <List todos={todos} setTodos={setTodos} />
+    </Card.Text>
+  </Card.Body>
+</Card> */}

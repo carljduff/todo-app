@@ -1,4 +1,5 @@
-import '../css/input.css'
+import '../App.css'
+
 export default function Input ({todos, setTodos, input, setInput}) {
 
     const inputValueHandler = (e) => {
@@ -23,13 +24,34 @@ export default function Input ({todos, setTodos, input, setInput}) {
             setInput('')
         }
     }
+
     
+    const checkAll = () => {
+        setTodos(todos.map(stateItem => {
+            if(todos.id === todos.id) {
+                return {
+                    ...stateItem, completed: !stateItem.completed 
+                }
+            }
+            return item;
+        }))
+      }
+
+      const deleteAll = () => {
+        setTodos(todos.filter(stateItem => stateItem.id == todos.id))
+     }
 
     return(
+        <>
         <div className='input-wrapper'>
-
+            
         <input value={input} onChange={inputValueHandler} onKeyDown={inputSubmitHandler} className='input' placeholder="What do you need to do?" /> 
-    
         </div>
+
+        <div className='button-wrapper'>
+        <button onClick={checkAll} className='button allbtn'>Complete All</button>
+        <button onClick={deleteAll} className='button allbtn'>Delete All</button>
+        </div>
+        </>
     )
 }

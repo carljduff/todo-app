@@ -1,9 +1,15 @@
 export default function StatusButton({label}) {
+
+
+    
+  
     return(
 
+
+        
         
         <div>
-        <button className="status-button">{label}</button>
+        <button className="button">{label}</button>
         </div>
     )
 }

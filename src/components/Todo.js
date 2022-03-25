@@ -1,38 +1,35 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
+
 import '../App.css'
-import Container from 'react-bootstrap/Container'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
-import { List } from './List'
+
 
 export default function Todo( { todos, todo, setTodos } ) {
 
 const deleteHandler = () => {
-   setTodos(todos.filter(item => item.id !== todo.id))
-
+   setTodos(todos.filter(stateItem => stateItem.id !== todo.id))
 }
-  
+
+
+
 const checkHandler = () => {
-  if(todo.completed === false) {
-    todo.completed = true;
-  } else if(todo.completed === true) {
-    todo.completed = false;
-  }
-}
-
-const howManyLeft = () => {
-  setTodos(todos.filter(item => item.completed == true)).length;
+  setTodos(todos.map(stateItem => {
+      if(stateItem.id === todo.id) {
+          return {
+              ...stateItem, completed: !stateItem.completed 
+          }
+      }
+      return stateItem;
+  }))
 }
 
     return(
         <>
-       <Container>
-  <Row className='todo-wrap'>
-    <Col><button onClick={checkHandler} className='button check'>CHECK</button></Col>
-    <Col><h4 className="todo">{todo.label}</h4></Col>
-    <Col><button onClick={deleteHandler} className='button'>X</button></Col>
-  </Row>
-</Container>
+       <div className='todo-group'>
+    <button onClick={checkHandler} className='button check'><i className="fa-solid fa-circle-check"></i></button>
+    <h4 className={`todo ${todo.completed ? 'line': ''}`}>{todo.label}</h4>
+    <button onClick={deleteHandler} className='button delete-btn'><i className="fa-solid fa-circle-minus"></i></button>
+ </div>
         </>
     )
 }
