@@ -25,7 +25,7 @@ useEffect(() => {
 }, [todos]);
 
 
- let howMany = todos.filter((todo) => todo.completed === true).length;
+ let howMany = todos.filter((todo) => todo.completed === false).length;
 
 
 
@@ -33,19 +33,17 @@ useEffect(() => {
    <>
    
    
-<Card className="text-center">
-  <Card.Header>To-Do List</Card.Header>
-  <Card.Body>
-     <Input todos={todos} setTodos={setTodos} input={input} setInput={setInput} />
-    <Card.Text>
-     <List todos={todos} setTodos={setTodos} />
-    </Card.Text>
-  </Card.Body>
-</Card>
+  <p className='card'>To-Do List</p>
 
   
+     <Input todos={todos} setTodos={setTodos} input={input} setInput={setInput} />
+    
+     <List todos={todos} setTodos={setTodos} />
+   
+
+  
+       <p className='count'> {` ${howMany} Items Left`} </p>
      <div className='button-wrapper'>
-       <p> {howMany} </p>
 <StatusButton label={'All'} setStatus={setStatus} status={status} />
 <StatusButton label={'To-Do'} />
 <StatusButton label={'Complete'} />
@@ -60,3 +58,15 @@ useEffect(() => {
 }
 
 export default App;
+
+
+
+{/* <Card className="text-center card">
+  <Card.Header className='card'>To-Do List</Card.Header>
+  <Card.Body>
+     <Input todos={todos} setTodos={setTodos} input={input} setInput={setInput} />
+    <Card.Text>
+     <List todos={todos} setTodos={setTodos} />
+    </Card.Text>
+  </Card.Body>
+</Card> */}
