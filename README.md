@@ -5,5 +5,5 @@ The purpose of this project is to create a fully functional CRUD (Create, Read, 
 ## Tech Stack
 * HTML
 * CSS
-* JS
+* JavaScript
 * React
