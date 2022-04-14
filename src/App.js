@@ -26,12 +26,15 @@ function App() {
     if (e.target.innerText === "Complete") {
       setStatus("Complete");
       console.log(status);
-      console.log("test");
-    }
-
-    if (status === "Complete") {
+      // console.log("test");
       view = todos.filter((todo) => todo.completed);
     }
+
+    // if (status === "Complete") {
+    //   view = todos.filter((todo) => todo.completed);
+    // }
+
+  
   };
 
   return (
