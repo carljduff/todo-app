@@ -6,7 +6,7 @@ export default function Input({ todos, setTodos, input, setInput }) {
   };
 
   const inputSubmitHandler = (e) => {
-    if (e.key === "Enter") {
+    if (e.key === "Enter" && input != "") {
       setTodos([
         ...todos,
         {

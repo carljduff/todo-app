@@ -1,7 +1,7 @@
-export default function StatusButton({ label, completeFunction, setStatus }) {
+export default function StatusButton({ label, filterHandler }) {
   return (
     <div>
-      <button onClick={completeFunction} className="button">
+      <button onClick={filterHandler} className="button">
         {label}
       </button>
     </div>

@@ -8,7 +8,8 @@ import "./App.css";
 function App() {
   const [todos, setTodos] = useState([]);
   const [input, setInput] = useState("");
-  const [status, setStatus] = useState("All");
+  const [status, setStatus] = useState("");
+  const [filteredTodos, setFilteredTodos] = useState([]);
 
   useEffect(() => {
     setTodos(JSON.parse(localStorage.getItem("work")));
@@ -16,27 +17,48 @@ function App() {
 
   useEffect(() => {
     localStorage.setItem("work", JSON.stringify(todos));
-  }, [todos]);
+  }, [todos, status]);
 
   let howMany = todos.filter((todo) => todo.completed === false).length;
 
-  let view = todos;
+  // let view = todos;
 
-  const statusFunction = (e) => {
-    if (e.target.innerText === "Complete") {
-      setStatus("Complete");
-      console.log(status);
-      // console.log("test");
-      view = todos.filter((todo) => todo.completed);
+  // const statusFunction = (e) => {
+  //   if (e.target.innerText === "Complete") {
+  //     setStatus("Complete");
+  //     console.log(status);
+  //     view = todos.filter((todo) => todo.completed);
+  //     setTodos(view)  
+  //   }
+
+  //   if (e.target.innerText === "All") {
+  //     setStatus("All")
+  //     console.log(status)
+  //     view = todos.filter((todo) => todo)
+  //     setTodos(view)
+  //   }
+  
+  
+  // };
+
+  const filterHandler = (e) => {
+    if (e.target.innerText === 'Complete') {
+      setFilteredTodos(todos.filter(todo => todo.completed === true))
+      console.log(filteredTodos)
     }
 
-    // if (status === "Complete") {
-    //   view = todos.filter((todo) => todo.completed);
-    // }
+    if (e.target.innerText === 'To-Do') {
+      setFilteredTodos(todos.filter(todo => todo.completed === false))
+      console.log(filteredTodos)
+    }
+
+    if (e.target.innerText === 'All') {
+      setFilteredTodos(todos)
+      console.log(filteredTodos)
+    }
+  }
 
   
-  };
-
   return (
     <>
       <Input
@@ -50,13 +72,13 @@ function App() {
 
       <p className="count"> {` ${howMany} Items Left`} </p>
       <div className="button-wrapper">
-        <StatusButton label={"All"} />
-        <StatusButton label={"To-Do"} />
+        <StatusButton label={"All"} 
+        filterHandler={filterHandler}
+        />
+        <StatusButton filterHandler={filterHandler} label={"To-Do"} />
         <StatusButton
-          todos={view}
-          setStatus={setStatus}
-          status={status}
-          completeFunction={statusFunction}
+                  filterHandler={filterHandler}
+
           label={"Complete"}
         />
       </div>
